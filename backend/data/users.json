@@ -1,0 +1,32 @@
+[
+  {
+    "id": "u01",
+    "name": "Sardor",
+    "bio": "Introvert. Ijtimoiy ko‘nikmalar ustida ishlamoqchiman.",
+    "langs": ["uz", "en"],
+    "xp": 420,
+    "avatar": "/avatars/sardor.jpg",
+    "online": true,
+    "confidence": 0.42
+  },
+  {
+    "id": "u02",
+    "name": "Dilnoza",
+    "bio": "Kuniga 10 daqiqa gapirish praktika qilaman.",
+    "langs": ["uz", "ru", "en"],
+    "xp": 780,
+    "avatar": "/avatars/dilnoza.jpg",
+    "online": false,
+    "confidence": 0.62
+  },
+  {
+    "id": "u03",
+    "name": "Akmal",
+    "bio": "Pronunciation coach. Help and feedback.",
+    "langs": ["en"],
+    "xp": 150,
+    "avatar": "/avatars/akmal.jpg",
+    "online": true,
+    "confidence": 0.78
+  }
+]
