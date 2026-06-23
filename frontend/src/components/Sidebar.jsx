@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { ChatBubbleLeftEllipsisIcon, MicrophoneIcon, UsersIcon } from '@heroicons/react/24/outline'
 
 function NavItem({ to, icon, title, subtitle }) {
   return (
@@ -19,24 +19,22 @@ export default function Sidebar() {
     <aside className="w-80 p-6 border-r border-slate-100 hidden md:block">
       <div className="flex items-center gap-3 mb-6">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-sky-400 flex items-center justify-center font-bold text-white">W</div>
-        <div>
+        <div className="flex-1">
           <h1 className="text-lg font-bold text-slate-900">Websus Learning</h1>
           <p className="text-sm text-muted">Introvert uchun gaplashish mashqi</p>
+        </div>
+        <div>
+          {/* Theme toggle */}
+          <div style={{ width: 40 }}>
+            {/* placeholder for ThemeToggle injected by parent layout */}
+          </div>
         </div>
       </div>
 
       <div className="space-y-3">
-        <motion.div whileHover={{ scale: 1.02 }}>
-          <NavItem to="/" icon={<span>💬</span>} title="Chat Practice" subtitle="AI bilan mashq" />
-        </motion.div>
-
-        <motion.div whileHover={{ scale: 1.02 }}>
-          <NavItem to="/speaking" icon={<span>🎙️</span>} title="Speaking" subtitle="Ovoz bilan mashq" />
-        </motion.div>
-
-        <motion.div whileHover={{ scale: 1.02 }}>
-          <NavItem to="#" icon={<span>👥</span>} title="Community" subtitle="Partnerlar" />
-        </motion.div>
+        <NavItem to="/" icon={<ChatBubbleLeftEllipsisIcon className="w-5 h-5" />} title="Chat Practice" subtitle="AI bilan mashq" />
+        <NavItem to="/speaking" icon={<MicrophoneIcon className="w-5 h-5" />} title="Speaking" subtitle="Ovoz bilan mashq" />
+        <NavItem to="#" icon={<UsersIcon className="w-5 h-5" />} title="Community" subtitle="Partnerlar" />
       </div>
 
       <div className="mt-6 text-sm text-muted">
