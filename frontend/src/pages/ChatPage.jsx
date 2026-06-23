@@ -52,34 +52,36 @@ export default function ChatPage() {
       <Sidebar />
 
       <main className="flex-1 p-6">
-        <div className="max-w-4xl mx-auto h-[80vh] bg-[linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02))] rounded-2xl glass shadow-lg overflow-hidden flex flex-col">
-          <div className="flex items-center justify-between p-6 border-b border-white/6">
+        <div className="max-w-4xl mx-auto h-[80vh] bg-white rounded-2xl glass card-shadow overflow-hidden flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 border-b border-slate-100">
             <div>
-              <h2 className="text-xl font-semibold">Chat Practice</h2>
-              <p className="text-sm text-white/60">AI bilan ravon gapirishni mashq qiling</p>
+              <h2 className="text-xl font-semibold text-slate-900">Chat Practice</h2>
+              <p className="text-sm text-muted">AI bilan ravon gapirishni mashq qiling</p>
             </div>
             <div className="flex items-center gap-3">
-              <div className="text-sm text-green-400 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <div className="text-sm text-green-600 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
                 Online AI
               </div>
             </div>
           </div>
 
-          <div ref={containerRef} className="flex-1 p-6 overflow-y-auto space-y-4">
+          {/* Messages */}
+          <div ref={containerRef} className="flex-1 p-6 overflow-y-auto space-y-4 bg-white">
             {messages.map(m => (
               <MessageBubble key={m.id} role={m.role} text={m.text} />
             ))}
 
             {loading && (
               <div className="flex items-center">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-400 to-sky-400 flex items-center justify-center text-black font-bold">AI</div>
+                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-400 to-sky-400 flex items-center justify-center text-white font-bold">AI</div>
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="ml-3">
-                  <div className="bg-white/6 text-white/90 px-4 py-2 rounded-xl">
+                  <div className="bg-slate-100 text-slate-800 px-4 py-2 rounded-xl">
                     <div className="flex gap-2">
-                      <div className="w-2 h-2 rounded-full bg-white/70 animate-pulse" />
-                      <div className="w-2 h-2 rounded-full bg-white/50 animate-pulse delay-75" />
-                      <div className="w-2 h-2 rounded-full bg-white/30 animate-pulse delay-150" />
+                      <div className="w-2 h-2 rounded-full bg-slate-400 animate-pulse" />
+                      <div className="w-2 h-2 rounded-full bg-slate-300 animate-pulse delay-75" />
+                      <div className="w-2 h-2 rounded-full bg-slate-200 animate-pulse delay-150" />
                     </div>
                   </div>
                 </motion.div>
@@ -87,26 +89,28 @@ export default function ChatPage() {
             )}
           </div>
 
-          <div className="p-4 border-t border-white/6 bg-gradient-to-b from-transparent to-black/10">
+          {/* Suggestions */}
+          <div className="p-4 border-t border-slate-100 bg-white">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-white/70">Takliflar</span>
-              <span className="text-xs text-white/40">AI</span>
+              <span className="text-sm text-muted">Takliflar</span>
+              <span className="text-xs text-muted">AI</span>
             </div>
             <div className="flex gap-3">
               {suggestions.length ? suggestions.map((s, i) => (
-                <button key={i} onClick={() => sendMessage(String(s))} className="btn-rounded glass px-3 py-2 bg-white/6 hover:bg-white/8 text-sm">
+                <button key={i} onClick={() => sendMessage(String(s))} className="btn-rounded glass px-3 py-2 bg-slate-100 hover:bg-slate-200 text-sm text-slate-800">
                   {s.length > 40 ? s.slice(0,40) + '…' : s}
                 </button>
               )) : (
                 <>
-                  <button onClick={() => sendMessage('Menga suhbatni boshlash uchun savol bering')} className="btn-rounded glass px-3 py-2 bg-white/6 hover:bg-white/8 text-sm">Qanday gapni boshlash mumkin?</button>
-                  <button onClick={() => sendMessage('Menga intervyu stsenariysi kerak')} className="btn-rounded glass px-3 py-2 bg-white/6 hover:bg-white/8 text-sm">Intervyu mashqi</button>
+                  <button onClick={() => sendMessage('Menga suhbatni boshlash uchun savol bering')} className="btn-rounded glass px-3 py-2 bg-slate-100 hover:bg-slate-200 text-sm text-slate-800">Qanday gapni boshlash mumkin?</button>
+                  <button onClick={() => sendMessage('Menga intervyu stsenariysi kerak')} className="btn-rounded glass px-3 py-2 bg-slate-100 hover:bg-slate-200 text-sm text-slate-800">Intervyu mashqi</button>
                 </>
               )}
             </div>
           </div>
 
-          <div className="p-4 border-t border-white/6 flex items-center gap-3">
+          {/* Input */}
+          <div className="p-4 border-t border-slate-100 flex items-center gap-3 bg-white">
             <VoiceButton
               listening={listening}
               onStart={() => { startListening(); }}
@@ -117,10 +121,10 @@ export default function ChatPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') sendMessage(input) }}
-              className="flex-1 bg-transparent outline-none px-4 py-3 text-white placeholder-white/40 rounded-full glass"
+              className="flex-1 bg-transparent outline-none px-4 py-3 text-slate-800 placeholder-slate-400 rounded-full glass"
               placeholder="Siz nima demoqchisiz? Enter bilan yuboring yoki mikrofonni bosing"
             />
-            <button onClick={() => { sendMessage(input) }} className="btn-rounded bg-gradient-to-r from-indigo-500 to-sky-400 hover:scale-105">
+            <button onClick={() => { sendMessage(input) }} className="btn-rounded bg-gradient-to-r from-indigo-500 to-sky-400 hover:scale-105 text-black">
               Yuborish
             </button>
           </div>

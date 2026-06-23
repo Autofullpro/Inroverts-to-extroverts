@@ -1,118 +1,12 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inroverts to Extroverts — Chat</title>
-    <meta name="description" content="Inroverts to Extroverts — interactive chat for practicing social skills" />
+    <title>Websus Learning — Chat</title>
   </head>
-  <body class="bg-gradient-to-bl from-neutral-900 via-indigo-900 to-slate-900 text-slate-100 min-h-screen">
-    <div class="max-w-7xl mx-auto px-6 py-10">
-      <header class="flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" class="text-indigo-400">
-            <rect width="24" height="24" rx="6" fill="currentColor" class="opacity-20"></rect>
-            <path d="M7 12h10M7 8h10M7 16h6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="text-xl font-semibold tracking-tight">Inroverts → Extroverts</span>
-        </a>
-
-        <nav class="hidden sm:flex gap-4 items-center">
-          <a class="text-slate-300 hover:text-white" href="#">Home</a>
-          <a class="text-slate-300 hover:text-white" href="#">About</a>
-          <a class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-md text-white" href="#">Get Started</a>
-        </nav>
-      </header>
-
-      <main class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <!-- Hero -->
-        <section>
-          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-            Amaliy suhbat mashg'ulotlari bilan ishonchingizni oshiring
-          </h1>
-          <p class="mt-4 text-slate-300 max-w-xl">
-            Qisqa mashqlar va realistik rollo'ynashlar orqali interaktiv chatbot yordamida ijtimoiy ko'nikmalaringizni rivojlantiring.
-          </p>
-
-          <div class="mt-8 flex gap-4">
-            <a class="inline-flex items-center gap-2 px-5 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-md font-medium" href="#">
-              Boshlash
-            </a>
-            <a class="inline-flex items-center gap-2 px-5 py-3 border border-slate-700 rounded-md text-slate-200 hover:border-slate-500" href="#">
-              Demo ko'rish
-            </a>
-          </div>
-
-          <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-300">
-            <li class="flex items-start gap-3">
-              <span class="inline-block w-2 h-2 rounded-full bg-indigo-400 mt-2"></span>
-              Real-time mashqlar
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="inline-block w-2 h-2 rounded-full bg-indigo-400 mt-2"></span>
-              Moslashuvchan o'qitish rejimi
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="inline-block w-2 h-2 rounded-full bg-indigo-400 mt-2"></span>
-              Progress tracking
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="inline-block w-2 h-2 rounded-full bg-indigo-400 mt-2"></span>
-              Foydalanishi oson interfeys
-            </li>
-          </ul>
-        </section>
-
-        <!-- Chat card (UI demo) -->
-        <aside class="bg-slate-800/60 backdrop-blur rounded-2xl p-6 shadow-lg">
-          <div class="flex items-center justify-between">
-            <div>
-              <h3 class="text-lg font-semibold">Chat Practice</h3>
-              <p class="text-sm text-slate-400">Role-play bilan mashq qiling</p>
-            </div>
-            <div class="text-xs text-slate-400">Online</div>
-          </div>
-
-          <div class="mt-6 space-y-3 h-64 overflow-auto pr-2">
-            <!-- message from bot -->
-            <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-full bg-indigo-500 flex items-center justify-center text-white text-sm">B</div>
-              <div class="bg-slate-700/40 rounded-xl p-3 text-slate-100 max-w-[70%]">
-                Salom! Bugun qanday mavzuda mashq qilmoqchisiz?
-              </div>
-            </div>
-
-            <!-- user message -->
-            <div class="flex items-start gap-3 justify-end">
-              <div class="bg-indigo-600 rounded-xl p-3 text-white max-w-[70%]">
-                Xayrli kun — kichik suhbat mashq qilamizmi?
-              </div>
-              <div class="w-9 h-9 rounded-full bg-slate-600 flex items-center justify-center text-white text-sm">S</div>
-            </div>
-
-            <!-- bot -->
-            <div class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-full bg-indigo-500 flex items-center justify-center text-white text-sm">B</div>
-              <div class="bg-slate-700/40 rounded-xl p-3 text-slate-100 max-w-[70%]">
-                Albatta — sizni suhbat boshlash va nutqni rivojlantirishga yo'naltiraman.
-              </div>
-            </div>
-          </div>
-
-          <form class="mt-5 flex items-center gap-3" onsubmit="event.preventDefault()">
-            <input aria-label="type message" placeholder="Xabar yozing..." class="flex-1 bg-transparent border border-slate-700 rounded-full px-4 py-2 focus:outline-none focus:border-indigo-500" />
-            <button class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500 hover:bg-indigo-400 rounded-full text-white">Yuborish</button>
-          </form>
-        </aside>
-      </main>
-
-      <footer class="mt-12 border-t border-slate-700/40 pt-6 text-center text-slate-400 text-sm">
-        © 2026 Inroverts to Extroverts — Barcha huquqlar himoyalangan
-      </footer>
-    </div>
-
-    <div id="root" class="hidden"></div>
-
+  <body class="bg-gradient-to-br from-white to-slate-50 text-slate-900">
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
